@@ -170,7 +170,10 @@ function wait(ms){
          document.querySelector('.result').innerText = result;
          mathString = result.toString();
          // currentNum = result.toString();
-         currentNum = result;
+         if (result == 0) {
+             currentNum = ""
+         }
+         else {currentNum = result;}
          lastNums = result.toString().length;
          if (Math.sign(result) == -1) {
             plusMinus = "-";
@@ -191,4 +194,3 @@ function wait(ms){
  function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
-  
