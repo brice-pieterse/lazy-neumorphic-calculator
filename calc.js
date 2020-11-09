@@ -34,6 +34,7 @@ calcButtons.addEventListener('mousedown', function(event){
             mathString = "";
             lastNums = 0;
             negativeResult = false;
+            firstOperation = true;
             document.querySelector('.result').innerText = 0;
         }
         if (button.className == 'math-op') {
@@ -190,3 +191,4 @@ function wait(ms){
  function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
+  
