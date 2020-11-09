@@ -1,4 +1,3 @@
-
 let currentNum = "";
 let mathString = "";
 let plusMinus = "";
@@ -22,6 +21,7 @@ calcButtons.addEventListener('mousedown', function(event){
             formNum(button);
         }
         if (button.classList.contains('percent')) {
+            if (currentNum === "") {currentNum = 0;}
             currentNum = currentNum / 100;
             mathString = mathString.slice(lastNums);
             mathString = mathString + currentNum;
@@ -80,7 +80,8 @@ calcButtons.addEventListener('mousedown', function(event){
         }
         if (button.classList.contains('plus-minus')) {
             if (currentNum === ""){
-                currentNum = document.querySelector('.result').innerText;
+                //currentNum = document.querySelector('.result').innerText;
+                currentNum = 0;
             }
             if (plusMinus == "+"){
                 plusMinus = "-";
@@ -157,6 +158,7 @@ function wait(ms){
         mathString = "";
         lastNums = 0;
         negativeResult = false;
+        firstOperation = true;
      } 
      else if (result.toString().length > 7) {
         document.querySelector('.result').style.fontSize = "26px";
@@ -166,6 +168,7 @@ function wait(ms){
         mathString = "";
         lastNums = 0;
         negativeResult = false;
+        firstOperation = true;
      }
      else {
          document.querySelector('.result').innerText = result;
@@ -174,7 +177,7 @@ function wait(ms){
          if (result == 0) {
              currentNum = ""
          }
-         else {currentNum = result;}
+         else {currentNum = result.toString();}
          lastNums = result.toString().length;
          if (Math.sign(result) == -1) {
             plusMinus = "-";
