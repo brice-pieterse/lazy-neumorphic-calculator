@@ -1,4 +1,3 @@
-
 let currentNum = "";
 let mathString = "";
 let plusMinus = "";
@@ -6,10 +5,10 @@ let mathReady = false;
 let operationSelected = false;
 let lastNums = 0;
 let negativeResult = false;
-let operationsRan = 0;
+let operationsRan = 1;
+let firstOperation = true;
 const calcButtons = document.querySelector('.calc-wrapper')
-const introSpeak = ["Math really isn't my thing.", "Do you really need this number?", "Can you just ask Siri?", "Mind coming back tomorrow?"]
-const midSpeak = ["You're really pushing my buttons.", "Can we speed this up?", "This is really doing a number on me.", "Can we take 5?", "I'm at my sixes and sevens here.", "I was on cloud nine a few minutes ago."]
+const midSpeak = ["You're really pushing my buttons.", "Can we speed this up?", "This is really doing a number on me.", "Can we take 5?", "I'm at my sixes and sevens here.", "I was on cloud nine a few minutes ago.", "Math really isn't my thing.", "Do you really need this number?", "Can you just ask Siri?", "Mind coming back tomorrow?"]
 
 
 calcButtons.addEventListener('mousedown', function(event){
@@ -38,8 +37,17 @@ calcButtons.addEventListener('mousedown', function(event){
             document.querySelector('.result').innerText = 0;
         }
         if (button.className == 'math-op') {
-        
-            if (currentNum === "") {currentNum = "0"}
+
+            if (firstOperation && currentNum === "") {
+                currentNum = "0";
+                mathString = mathString + "0";
+                firstOperation = false;
+            }
+
+            if (currentNum === "") {
+                currentNum = "0";
+            }
+
             let operation = "";
             if (button.innerText === "x"){
                 operation = "*"
@@ -161,7 +169,7 @@ function wait(ms){
          document.querySelector('.result').innerText = result;
          mathString = result.toString();
          // currentNum = result.toString();
-         currentNum = ""
+         currentNum = result;
          lastNums = result.toString().length;
          if (Math.sign(result) == -1) {
             plusMinus = "-";
@@ -173,18 +181,12 @@ function wait(ms){
  }
 
  function speakLazy(){
-     if (operationsRan === 0){
-        document.querySelector('.title').innerText = introSpeak[getRandomInt(introSpeak.length)]
-     }
-     else {
-         if (operationsRan % 6 === 0) {
+     if (operationsRan % 7 === 0) {
             document.querySelector('.title').innerText = midSpeak[getRandomInt(midSpeak.length)]
          }
+         operationsRan++;
      }
-     operationsRan++;
- }
 
  function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
-  
