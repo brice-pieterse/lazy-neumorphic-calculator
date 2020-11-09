@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="left-side">
+            <h1 class="title">Lazy Neumorphic Calculator</h1>
+            <h2 class="by-brice"> By Brice Pieterse</h2>
+            <p class="quote">"I absolutely insist on enjoying life. Not so task-oriented. Not a work horse. If you're looking for a Clydesdale, I'm probably not your man."<span class="movie"> - Owen Wilson, You, Me, and Dupree.</span></p>
+        </div>
+        <div class="calc-container">
+            <div class="sleepy-wrapper">
+                <lottie-player class="zzz" src="/zzz.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+            </div>
+            <div class="calc-wrapper">
+                <div class="calc-result-wrapper">
+                    <h1 class="result">0</h1>
+                </div>
+                <div class="calc-buttons-wrapper">
+                    <div class="math-operations">
+                        <button class="math-op">/</button>
+                        <button class="math-op">x</button>
+                        <button class="math-op">-</button>
+                        <button class="math-op">+</button>
+                        <button class="math-op equals">=</button>
+                    </div>
+                    <div class="number-operations">
+                        <div class="upper-operations">
+                            <button class="operation cancel">AC</button>
+                            <button class="operation plus-minus">+/-</button>
+                            <button class="operation percent">%</button>
+                        </div>
+                        <div class="main-numbers">
+                            <div class="num-wrapper">
+                                <button class="num">7</button>
+                                <button class="num">8</button>
+                                <button class="num">9</button></div>
+                            <div class="num-wrapper">
+                                <button class="num">4</button>
+                                <button class="num">5</button>
+                                <button class="num">6</button>
+                            </div>
+                            <div class="num-wrapper">
+                                <button class="num">1</button>
+                                <button class="num">2</button>
+                                <button class="num">3</button>
+                            </div>
+                        </div>
+                        <div class="lower-operations">
+                            <button class="num zero">0</button>
+                            <button class="num decimal">.</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="calc.js"></script>
+</body>
+
+</html>
