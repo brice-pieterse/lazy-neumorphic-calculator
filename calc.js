@@ -1,3 +1,4 @@
+
 let currentNum = "";
 let mathString = "";
 let plusMinus = "";
@@ -185,7 +186,7 @@ function wait(ms){
  }
 
  function speakLazy(){
-     if (operationsRan % 7 === 0) {
+     if (operationsRan % 8 === 0) {
             document.querySelector('.title').innerText = midSpeak[getRandomInt(midSpeak.length)]
          }
          operationsRan++;
