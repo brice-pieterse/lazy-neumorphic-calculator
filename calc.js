@@ -133,9 +133,11 @@ function wait(ms){
         currentNum = "";
         plusMinus = "";
         mathString = "";
-        operationSelected = false;
         lastNums = 0;
-    }
+        negativeResult = false;
+        firstOperation = true;
+        operationSelected = false;
+     }
     else {
         currentNum = currentNum + button.innerText;
         mathString = mathString + button.innerText;
@@ -159,6 +161,7 @@ function wait(ms){
         lastNums = 0;
         negativeResult = false;
         firstOperation = true;
+        operationSelected = false;
      } 
      else if (result.toString().length > 7) {
         document.querySelector('.result').style.fontSize = "26px";
@@ -169,6 +172,7 @@ function wait(ms){
         lastNums = 0;
         negativeResult = false;
         firstOperation = true;
+        operationSelected = false;
      }
      else {
          document.querySelector('.result').innerText = result;
@@ -198,3 +202,4 @@ function wait(ms){
  function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
+  
