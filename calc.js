@@ -36,6 +36,7 @@ calcButtons.addEventListener('mousedown', function(event){
             lastNums = 0;
             negativeResult = false;
             firstOperation = true;
+            mathReady = false;
             document.querySelector('.result').innerText = 0;
         }
         if (button.className == 'math-op') {
@@ -137,6 +138,7 @@ function wait(ms){
         negativeResult = false;
         firstOperation = true;
         operationSelected = false;
+        mathReady = false;
      }
     else {
         currentNum = currentNum + button.innerText;
@@ -162,6 +164,7 @@ function wait(ms){
         negativeResult = false;
         firstOperation = true;
         operationSelected = false;
+        mathReady = false;
      } 
      else if (result.toString().length > 7) {
         document.querySelector('.result').style.fontSize = "26px";
@@ -173,6 +176,7 @@ function wait(ms){
         negativeResult = false;
         firstOperation = true;
         operationSelected = false;
+        mathReady = false;
      }
      else {
          document.querySelector('.result').innerText = result;
