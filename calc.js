@@ -25,7 +25,6 @@ calcButtons.addEventListener('mousedown', function(event){
             mathString = mathString.slice(lastNums);
             mathString = mathString + currentNum;
             lastNums = currentNum.length;
-            button.style.backgroundColor = "rgb(228, 228, 228)";
             document.querySelector('.result').innerText = currentNum;
         }
         if (button.classList.contains('cancel')) {
