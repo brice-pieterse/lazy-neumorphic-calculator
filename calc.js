@@ -16,7 +16,6 @@ calcButtons.addEventListener('mousedown', function(event){
     document.querySelector('.result').style.fontSize = "48px";
     speakLazy();
     if (button.tagName === 'BUTTON') {
-        button.style.backgroundColor = "rgb(228, 228, 228)";
         if (button.classList.contains('num')) {
             formNum(button);
         }
@@ -112,20 +111,6 @@ calcButtons.addEventListener('mousedown', function(event){
         }
     }
 })
-
-calcButtons.addEventListener('mouseup', function(e){
-    const button = e.target;
-    wait(50);
-    button.style.backgroundColor = "white"
-})
-
-function wait(ms){
-    let start = new Date().getTime();
-    let end = start;
-    while(end < start + ms) {
-      end = new Date().getTime();
-   }
- }
 
  function formNum(button) {
     if (currentNum.length > 7) {
