@@ -115,6 +115,10 @@
     outline:0;
 }
 
+button:active {
+    background-color: #ececec;
+}
+
 .operation {
     width: 55px;
     height: 55px;
