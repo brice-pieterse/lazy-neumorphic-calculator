@@ -25,20 +25,6 @@
     position: relative;
 }
 
-.pillow-wrapper {
-    position: absolute;
-    top: -60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.zzz {
-    position: absolute;
-    left: -100px;
-    top: -15vh;
-}
-
 .calc-result-wrapper {
     height: 600px;
     width: 80%;
@@ -248,4 +234,38 @@
     font-size: 16px;
     font-style: italic;
     opacity: 65%;
+}
+
+@media screen and (max-width: 800px) {
+    
+    .page-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding-bottom: 100px;
+    }
+
+    .left-side {
+        margin-right: 0px;
+        margin-top: 100px;
+        margin-bottom: 60px;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+
+    .title {
+        font-size: 26px;
+    }
+
+    .quote {
+        font-size: 14px;
+    }
+
+    .movie {
+        font-size: 14px;
+    }
 }
